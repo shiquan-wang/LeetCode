@@ -2,7 +2,6 @@
 算法刷题之旅
 
 
-=======
 记录LeetCode刷题的过程，以及其他的一些demo  
 数据结构：  
 栈  
@@ -10,4 +9,4 @@
 155 Min Stack  
 225 Implement Stack Using Queue  
 232 Implement Queue Using Stack  
->>>>>>> 2a6662b12d4a7914003629b5e6d3d49c142c56ee
+
