@@ -26,10 +26,28 @@ class MinStack{
             s2.push(s2.top());
         }
     }
-
+    
+    void push_2(int x){
+        s1.push(x);
+        if(s2.empty()){
+            s2.push(x);
+        }else{
+            if(x <= s2.top()){
+                s2.push(x);
+            }
+        }
+    }
 
     void pop(){
         s2.pop();
+        s1.pop();
+    }
+
+    void pop_2(){
+        int temp = s1.top();
+        if(temp == s2.top()){
+            s2.pop();
+        }
         s1.pop();
     }
 
@@ -47,11 +65,11 @@ class MinStack{
 
 int main(){
     MinStack s;
-    s.push(-2);
-    s.push(0);
-    s.push(-3);
+    s.push_2(-2);
+    s.push_2(0);
+    s.push_2(-3);
     cout<<s.getMin()<<endl;
-    s.pop();
+    s.pop_2();
     cout<<s.top()<<endl;
     cout<<s.getMin()<<endl;
 
