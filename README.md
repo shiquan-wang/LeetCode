@@ -5,8 +5,8 @@
 
 数据结构：
 
-栈
-20  Vaild Parentheses
-155 Min Stack
-225 Implement Stack Using Queue
-232 Implement Queue Using Stack
+栈 
+20  Vaild Parentheses  
+155 Min Stack  
+225 Implement Stack Using Queue  
+232 Implement Queue Using Stack  
