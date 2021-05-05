@@ -51,7 +51,7 @@ public:
     } */
 
     //整理后的简洁写法
-    vector<int> dailyTemperatures(vector<int> T){      //递减栈
+    vector<int> dailyTemperatures(vector<int>& T){      //递减栈
         int n = T.size();
         stack<int> s;
         vector<int> ans(n);
