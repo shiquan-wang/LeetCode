@@ -12,3 +12,9 @@
 739 Dialay Temperatures     //单调栈  
 503 Next Greater element    //单调栈  
 
+链表  
+160 Intersection in two linklist  
+206 Reverse linked list  
+20  merge two list  
+83  remove duplicate element in sorted list  
+
