@@ -17,4 +17,5 @@
 206 Reverse linked list  
 20  merge two list  
 83  remove duplicate element in sorted list  
+19  remove Nth Node from end of the list  
 
