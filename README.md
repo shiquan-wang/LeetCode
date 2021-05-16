@@ -18,4 +18,9 @@
 20  merge two list  
 83  remove duplicate element in sorted list  
 19  remove Nth Node from end of the list  
+24  swap two nodes in pairs  
+445 add two number in list  
+234 palindrome linked list  
+
+
 
