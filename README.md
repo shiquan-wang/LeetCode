@@ -20,7 +20,8 @@
 19  remove Nth Node from end of the list  
 24  swap two nodes in pairs  
 445 add two number in list  
-234 palindrome linked list  
+234 palindrome linked list //回文链表  
+725 split linked list in parts  
 
 
 
