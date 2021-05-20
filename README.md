@@ -23,6 +23,9 @@
 234 palindrome linked list //回文链表  
 725 split linked list in parts  
 328 odd even linked list //奇偶链表  
+  
+数组
+283 move zeroes  
 
 
 
