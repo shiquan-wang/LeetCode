@@ -27,6 +27,7 @@
 数组
 283 move zeroes  
 566 reshape the matrix  
+485 max consecutive ones  
 
 
 
