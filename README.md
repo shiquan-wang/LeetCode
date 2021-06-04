@@ -28,6 +28,9 @@
 283 move zeroes  
 566 reshape the matrix  
 485 max consecutive ones  
+240 search 2d martix  
+378 Kth Smallest Element in sorted martix 二分查找，归并排序未实现  
+645 set Mismatch  
 
 
 
