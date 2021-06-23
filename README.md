@@ -31,6 +31,8 @@
 240 search 2d martix  
 378 Kth Smallest Element in sorted martix 二分查找，归并排序未实现  
 645 set Mismatch  
+287 Find the duplicate number  
+697 degree of an array  
 
 
 
