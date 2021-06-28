@@ -4,7 +4,7 @@
 
 记录LeetCode刷题的过程，以及其他的一些demo  
 数据结构：  
-栈  
+[栈](https://github.com/shiquan-wang/LeetCode/tree/master/Stack)  
 20  Vaild Parentheses  
 155 Min Stack  
 225 Implement Stack Using Queue  
@@ -12,7 +12,7 @@
 739 Dialay Temperatures     //单调栈  
 503 Next Greater element    //单调栈  
 
-链表  
+[链表](https://github.com/shiquan-wang/LeetCode/tree/master/List)  
 160 Intersection in two linklist  
 206 Reverse linked list  
 20  merge two list  
@@ -24,7 +24,7 @@
 725 split linked list in parts  
 328 odd even linked list //奇偶链表  
   
-数组
+[数组](https://github.com/shiquan-wang/LeetCode/tree/master/Nums)  
 283 move zeroes  
 566 reshape the matrix  
 485 max consecutive ones  
