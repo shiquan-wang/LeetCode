@@ -33,6 +33,8 @@
 645 set Mismatch  
 287 Find the duplicate number  
 697 degree of an array  
+766 toepliz matrix  
+16  3Sum Cloest  
 
 
 
