@@ -35,6 +35,11 @@
 697 degree of an array  
 766 toepliz matrix  
 16  3Sum Cloest  
+  
+[字符串]()  
+242 valid anagram  两个字符串字符是否完全相同
+409 longest palindrome  
+
 
 
 
