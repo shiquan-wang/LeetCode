@@ -41,7 +41,8 @@
 409 longest palindrome 给定一个字符串，判断这些字符可以组成的最大回文字符串  
 3   longest_substring without repeating char 判断给定字符串的最大无重复子串   
 5   longest_palindroic Substring  最长回文字符串  
-1143longest common Subsequence 最长子序列  
+1143longest common Subsequence 最长公共子序列  
+516 longest palindromic subsequence 最长回文子序列
 
 
 
