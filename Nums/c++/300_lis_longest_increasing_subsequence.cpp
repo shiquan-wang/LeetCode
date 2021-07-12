@@ -9,6 +9,7 @@ public:
     int lengthOfLIS(vector<int>& nums){
         int n = nums.size();
         vector<int> dp(n, 1);
+        //dp[i] 为考虑前 i 个元素，以第 i 个数字结尾的最长上升子序列的长度
         int max_len = 0;
         for(int i = 0; i < n; ++i){
             for(int j = 0; j < i; ++j){
