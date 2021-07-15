@@ -47,6 +47,10 @@
 516 longest palindromic subsequence 最长回文子序列  
 392 IS Subsequence  
 115 distinct_subsequence  
+  
+[哈希表](https://github.com/shiquan-wang/LeetCode/tree/master/Hash)  
+1 two sum  
+217 contains duplicate 存在重复元素  
 
 
 
