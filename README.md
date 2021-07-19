@@ -51,6 +51,12 @@
 [哈希表](https://github.com/shiquan-wang/LeetCode/tree/master/Hash)  
 1 two sum  
 217 contains duplicate 存在重复元素  
+  
+[树]()  
+104 Max Depth of tree  
+110 Balanced_binary_tree  
+543 diameter of binary tree 二叉树的直径  
+226 invert binary tree  
 
 
 
