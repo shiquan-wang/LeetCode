@@ -1,10 +1,10 @@
-#LeetCode
-##算法刷题之旅
+# LeetCode
+## 算法刷题之旅
 
 
-记录LeetCode刷题的过程，以及其他的一些demo  
-##数据结构：  
-###[栈](https://github.com/shiquan-wang/LeetCode/tree/master/Stack)  
+记录LeetCode刷题的过程，以及其他的一些demo
+## 数据结构:
+### [栈](https://github.com/shiquan-wang/LeetCode/tree/master/Stack)  
 * 20 Vaild Parentheses  
 * 155 Min Stack  
 * 225 Implement Stack Using Queue  
@@ -12,7 +12,7 @@
 * 739 Dialay Temperatures     //单调栈  
 * 503 Next Greater element    //单调栈  
 
-###[链表](https://github.com/shiquan-wang/LeetCode/tree/master/List)  
+### [链表](https://github.com/shiquan-wang/LeetCode/tree/master/List)  
 * 160 Intersection in two linklist  
 * 206 Reverse linked list  
 * 20  merge two list  
@@ -24,7 +24,7 @@
 * 725 split linked list in parts  
 * 328 odd even linked list //奇偶链表  
   
-###[数组](https://github.com/shiquan-wang/LeetCode/tree/master/Nums)  
+### [数组](https://github.com/shiquan-wang/LeetCode/tree/master/Nums)  
 * 283 move zeroes  
 * 566 reshape the matrix  
 * 485 max consecutive ones  
@@ -38,7 +38,7 @@
 * 300 LIS longest increasing subsequence 最长递增子序列  
 * 674 LCIS longest continuous increasing subsequence 最长连续递增子序列
 
-###[字符串](https://github.com/shiquan-wang/LeetCode/tree/master/String/cpp)  
+### [字符串](https://github.com/shiquan-wang/LeetCode/tree/master/String/cpp)  
 * 242 valid anagram  两个字符串字符是否完全相同  
 * 409 longest palindrome 给定一个字符串，判断这些字符可以组成的最大回文字符串  
 * 3   longest_substring without repeating char 判断给定字符串的最大无重复子串   
@@ -48,11 +48,11 @@
 * 392 IS Subsequence  
 * 115 distinct_subsequence  
   
-###[哈希表](https://github.com/shiquan-wang/LeetCode/tree/master/Hash)  
+### [哈希表](https://github.com/shiquan-wang/LeetCode/tree/master/Hash)  
 * 1 two sum  
 * 217 contains duplicate 存在重复元素  
   
-###[树](https://github.com/shiquan-wang/LeetCode/tree/master/Tree)  
+### [树](https://github.com/shiquan-wang/LeetCode/tree/master/Tree)  
 * 104 Max Depth of tree  
 * 110 Balanced_binary_tree  
 * 543 diameter of binary tree 二叉树的直径  
