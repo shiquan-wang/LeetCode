@@ -59,7 +59,7 @@
 * 226 invert binary tree  
 * 617 merge two binary tree  
 * 94 inorder traversal 
-* 
+* 222 count complete binary tree
 
 
 
