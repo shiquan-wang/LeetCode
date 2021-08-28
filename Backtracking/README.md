@@ -2,7 +2,10 @@
 ##
 ### 组合问题
 * 77 组合
-* 216 combination sum ||| 组合总和
+* 216 combination sum ||| 组合总和 （选择k个集合中数字使得sum等于target
+* 17 letter combinations of phone number
+* 39 combination sum 可以无限次的选择集合中的数字
+* 40 combination sum || 集合中每个数字只能使用一次,但是集合中数字有重复
 ### 分割问题
 * 131 分割回文字符串
 
