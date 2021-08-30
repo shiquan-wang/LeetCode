@@ -15,13 +15,13 @@ private:
             return;
         }
 
-        for(int i = start_index; i < candidates.size() && sum + candidates[i] <=target; ++i){
+        for(int i = start_index; i < candidates.size() && sum + candidates[i] <= target; ++i){
             if(i > start_index && candidates[i] == candidates[i-1]){//去除重复元素，即横向遍历时不能选择之前已经选择过的元素，横向不能重复，
-                continue;
+                continue;//直接用startIndex来去重,要对同一树层使用过的元素进行跳过
             }
             sum += candidates[i];
             path.push_back(candidates[i]);
-            backtracking(candidates, target, sum, i+1);
+            backtracking(candidates, target, sum, i+1);//i+1:每个数字在每个组合中只能使用一次
             path.pop_back();
             sum -= candidates[i];
         }
