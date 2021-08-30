@@ -21,6 +21,8 @@
   
 ### [树](https://github.com/shiquan-wang/LeetCode/tree/master/Tree)  
 
+## 算法思想：
+### [回溯算法](https://github.com/shiquan-wang/LeetCode/tree/master/Backtracking)
 
 
 
