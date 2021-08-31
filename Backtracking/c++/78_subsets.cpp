@@ -24,6 +24,6 @@ public:
         res.clear();
         subset.clear();
         backtracking(nums, 0);
-        return res；
+        return res;
     }
 };
