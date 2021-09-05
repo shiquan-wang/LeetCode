@@ -14,7 +14,7 @@ private:
         }
 
         for(int i = start_index; i < nums.size(); ++i){
-            if(i > start_index && nums[i] == nums[i-1]){//横向遍历时不能重复选择元素，!!要先对nums进行排序才能筛选掉重复元素
+            if(i > start_index && nums[i] == nums[i-1]){//横向遍历时不能重复选择元素，!!要先对nums进行排序才能这样筛选掉重复元素
                 continue;
             }
             path.push_back(nums[i]);
