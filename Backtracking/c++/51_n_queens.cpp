@@ -9,18 +9,18 @@ private:
     vector<string> path;
     bool is_vaild(int row, int col, vector<string>& chessboard, int n){
         int count = 0;
-        for(int i = 0; i < row; ++i){
+        for(int i = 0; i < row; ++i){//同一列
             if(chessboard[i][col] == 'Q'){
                 return false;
             }
         }
 
-        for (int i = row - 1, j = col - 1; i >=0 && j >= 0; i--, j--) {
+        for (int i = row - 1, j = col - 1; i >=0 && j >= 0; i--, j--) {//45度方向
             if (chessboard[i][j] == 'Q') {
              return false;
             }
         }
-        for(int i = row - 1, j = col + 1; i >= 0 && j < n; i--, j++) {
+        for(int i = row - 1, j = col + 1; i >= 0 && j < n; i--, j++) {//135度方向
             if (chessboard[i][j] == 'Q') {
                 return false;
             }
