@@ -21,6 +21,24 @@ public:
         }
         return max(dp[prices.size()-1][3], max(dp[prices.size()-1][1], dp[prices.size()-1][2]));
     }
+
+    int maxProfit2(vector<int>& prices){
+        if(prices.size() == 0) return 0;
+
+        vector<vector<int>> dp(prices.size(), vector<int>(3, 0));
+        //dp[i][0] 第i天不持有股票而且不是当天卖出的
+        //dp[i][1] 第i天持有股票
+        //dp[i][2] 第i天持有股票而且是当天卖出的
+        dp[0][0] = 0; dp[0][1] = -prices[0]; dp[0][2] = 0;
+
+        for(int i = 1; i < prices.size(); ++i){
+            dp[i][0] = max(dp[i-1][0], dp[i-1][2]);//前一天已经不持有股票而且也不是前一天卖出的 或者 前一天刚卖出股票
+            dp[i][1] = max(dp[i-1][1], dp[i-1][0] - prices[i]); //前一天已经是持有股票的状态 或者 前一天不持有股票但不是昨天卖的所以不冷冻期可以交易
+            dp[i][2] = dp[i-1][1] + prices[i];//第i天刚卖出股票
+        }
+
+        return max(dp[prices.size() - 1][0], dp[prices.size() - 1][2]);
+    }
 };
 
 /* 
