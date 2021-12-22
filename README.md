@@ -24,6 +24,7 @@
 ### [回溯算法](https://github.com/shiquan-wang/LeetCode/tree/master/Backtracking)
 ### [贪心法](https://github.com/shiquan-wang/LeetCode/tree/master/Greedy)
 ### [动态规划](https://github.com/shiquan-wang/LeetCode/tree/master/dynamic_programming)
+### [排序算法](https://github.com/shiquan-wang/LeetCode/tree/master/Sort)
 
 
 
