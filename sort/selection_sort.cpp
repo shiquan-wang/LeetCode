@@ -25,6 +25,7 @@ public:
             swap(nums[i], nums[index]);
         }
         return nums;
+        //O(n^2)
     }
 };
 
