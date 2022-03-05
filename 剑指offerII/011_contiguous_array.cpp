@@ -23,4 +23,26 @@ public:
 
         return res;
     }
+
+    int findMaxLength(vector<int>& nums){//前缀和 + 哈希表 // 数组不变而批量查询子数组的和 可以考虑前缀和
+        unordered_map<int, int> map;
+        int sum = 0, res = 0;
+
+        map[0] = -1;
+        for(int i = 0; i < nums.size(); ++i){
+            sum += nums[i] ? 1 : -1;
+            if(map.find(sum) != map.end()){
+                res = res > (i - map[sum]) ? res : (i - map[sum]) ;
+            }else{
+                map[sum] = i;
+            }
+        }
+        return res;
+    }
 };
+
+int main(){
+    vector<int> nums = {0, 1, 1};
+    Solution s1;
+    cout<<s1.findMaxLength(nums);
+}
