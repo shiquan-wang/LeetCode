@@ -19,37 +19,54 @@ using namespace std;
  */
 class KthLargest{
 private:
-    struct cmp{
-        bool operator()(const int& x, const int& y){
-            return x > y;
-        }
-    };
-    priority_queue<int, vector<int>, cmp> pq;
+    // struct cmp{
+    //     bool operator()(const int& x, const int& y){
+    //         return x > y;
+    //     }
+    // };
+    // priority_queue<int, vector<int>, cmp> pq;
+    // int limit;
+    priority_queue<int, vector<int>, greater<int>> pq;
     int limit;
 public:
-    KthLargest(int k, vector<int>& nums){
+    // KthLargest(int k, vector<int>& nums){
+    //     limit = k;
+    //     for(const auto &item : nums){
+    //         if(pq.size() < k){//优先队列还没有到k个元素
+    //             pq.emplace(item);
+    //             continue;
+    //         }
+    //         if(item > pq.top()){//优先队列
+    //             pq.pop();
+    //             pq.emplace(item);
+    //         }
+    //     }
+    // }
+
+    // int add(int val){
+    //     if(pq.size() < limit){
+    //         pq.emplace(val);
+    //     }else if(val > pq.top()){
+    //         pq.pop();
+    //         pq.emplace(val);
+    //     }
+
+    //     if(pq.size() < limit) return 0;
+    //     return pq.top();
+    // }
+
+    KthLargest(int k, vector<int> nums){
         limit = k;
-        for(const auto &item : nums){
-            if(pq.size() < k){//优先队列还没有到k个元素
-                pq.emplace(item);
-                continue;
-            }
-            if(item > pq.top()){//优先队列
-                pq.pop();
-                pq.emplace(item);
-            }
+        for(auto iter : nums){
+            add(iter);
         }
     }
 
     int add(int val){
-        if(pq.size() < limit){
-            pq.emplace(val);
-        }else if(val > pq.top()){
+        pq.push(val);
+        if(pq.size() > limit){
             pq.pop();
-            pq.emplace(val);
         }
-
-        if(pq.size() < limit) return 0;
         return pq.top();
     }
 };
