@@ -42,12 +42,12 @@ public:
                 dp[i][j] = dp[i+1][j-1] && (s[i] == s[j]);
             }
         }
-        for(auto vec : dp){
-            for(auto flag : vec){
-                cout<< flag<<" ";
-            }
-            cout<<endl;
-        }
+        // for(auto vec : dp){
+        //     for(auto flag : vec){
+        //         cout<< flag<<" ";
+        //     }
+        //     cout<<endl;
+        // }
     }
 
     void backtracking(string& s, int start_index){
@@ -64,11 +64,12 @@ public:
             } */
             if(dp[start_index][i]){//相当于从start_index开始到i结束，这一段作为一个小的子字符串，判断这个字符串是否是回文字符串
                 path.push_back(s.substr(start_index, i - start_index + 1));
+                backtracking(s, i+1);//寻找起始位置是i+1的回文子字符串
+                path.pop_back();
             }else{
                 continue;//start_index到i的子字符串不是回文字符串则判断下一个切割点
             }
-            backtracking(s, i+1);//寻找起始位置是i+1的回文子字符串
-            path.pop_back();
+            
         }
     }
 
