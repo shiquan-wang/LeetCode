@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include<vector>
 using namespace std;
 
 struct ListNode{
@@ -14,7 +14,7 @@ class Solution{
     private:
 
     public:
-    /* 迭代法，在遍历链表时，将当前节点的 \textit{next}next 指针改为指向前一个节点。由于节点没有引用其前一个节点，因此必须事先存储其前一个节点。在更改引用之前，还需要存储后一个节点。最后返回新的头引用。
+    /* 迭代法，在遍历链表时，将当前节点的 next 指针改为指向前一个节点。由于节点没有引用其前一个节点，因此必须事先存储其前一个节点。在更改引用之前，还需要存储后一个节点。最后返回新的头引用。
     空间O(1)  时间O(n)
      */
     ListNode* reverseList1(ListNode* head){
@@ -43,10 +43,35 @@ class Solution{
 };
 
 int main(){
-    int a[] = {1,2,3,4,5};
+    // int a[] = {1,2,3,4,5};
+    // int n;
+    // cin>>n;
+    int item;
+    vector<int> vec;
+    char ch;
+    // while (cin>>item)
+    // {
+    //     vec.push_back(item);
+    // }
+    while (1)
+    {
+        cin>>item;
+        vec.push_back(item);
+        if(cin.get() == '\n'){
+            break;
+        }
+    }
+    // do{
+    //     cin>>item;
+    //     vec.push_back(item);
+    // }while (getchar() != '\n');
+    
+    
+    
+
     ListNode *head = nullptr;
     for(int i = 4; i>=0; --i){
-        head = new ListNode(a[i], head);
+        head = new ListNode(vec[i], head);
     }
     Solution s ;
     ListNode *reverse = s.reverseList2(head);
