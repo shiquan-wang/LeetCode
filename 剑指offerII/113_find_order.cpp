@@ -61,7 +61,7 @@
  */
 #include<iostream>
 #include<vector>
-
+#include<algorithm>
 using namespace std;
 
 class Solution{
@@ -85,7 +85,7 @@ public:
             }
         }
 
-        if(!valid){//图中存在环
+        if(valid == false){//图中存在环
             return {};
         }
 
@@ -97,18 +97,29 @@ public:
         visited[u] = 1;
         //搜索相邻节点
         for(int i = 0; i < edges[u].size(); ++i){
-            if(visited[i] == 0){
-                dfs(i);
+            if(visited[edges[u][i]] == 0){//这里需要遍历的是edges[u]的所有邻接节点，edges[u][i]
+                dfs(edges[u][i]);
                 if(!valid){
                     return;
                 }
             }else{
-                if(visited[i] == 1){//遇到环，即在一个未搜索的节点中深度搜索遇到处于搜索中的节点
+                if(visited[edges[u][i]] == 1){//遇到环，即在一个未搜索的节点中深度搜索遇到处于搜索中的节点
                     valid = false;
+                    return;
                 }
             }
         }
-        visited[u] = 2;//遍历完节点置为2，表示已搜索
+        visited[u] = 2;//遍历完节点置为2，表示已搜索              
         result.push_back(u);
     }
 };
+int main(){
+    int numCourse = 4;
+    vector<vector<int>> prerequisites = {{1,0}, {2, 0}, {3, 1}, {3, 2}};
+
+    Solution s1;
+    vector<int> res = s1.findOrder(numCourse, prerequisites);
+    for(auto item : res){
+        cout<<item<<endl;
+    }
+}
