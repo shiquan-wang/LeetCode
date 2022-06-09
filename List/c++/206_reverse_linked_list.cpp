@@ -40,6 +40,26 @@ class Solution{
     }
 
     /* 递归法， */
+    ListNode* reverseList3(ListNode* head){
+        if(head == nullptr || head->next == nullptr){//如果head为空说明链表本身为空，否则当head->next为空时说明遍历到链表的最后一个元素即反转后的头结点位置了，停止递归，返回新的头结点
+            return head;
+        }
+
+        ListNode* temp = reverseList3(head->next);
+
+        head->next->next = head;
+        head->next = nullptr;
+        return temp;
+    }
+    /* 举例 1->2->3->nullptr
+    递归过程：
+    1入栈 temp = reverse(2->3)
+    2入栈 temp = reverse(3)
+    3入栈 3->next = nullptr 返回3
+    2入栈时 temp = 3, head = 2, 因此 2->next->next = 2 => 3->next = 2, 2->next = nullptr; 链表状态 3->2->nullptr; 返回temp = 3
+    1入栈时 temp = reverse(2->3) = 3, 1->next->next = 1 => 2->next = 1; 1->next = nullptr; return 3
+    递归结束 */
+
 };
 
 int main(){
