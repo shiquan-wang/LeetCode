@@ -122,3 +122,42 @@ int main(){
     lrc->put(2, 2);
     int param1 = lrc->get(1);
 }
+
+/* 
+LRU 要求使用O(1)的时间复杂度，那么需要使用哈希表来完成get和put操作，但是哈希表是无序的，无法表示先后使用顺序，
+因此这里考察的是哈希链表， 双向链表加哈希表组成的数据结构，将key - node存储在哈希表中，在双向链表中根据node的先后顺序来表示使用的先后顺序，最近使用放在双向链表的头部
+双向链表中存储key-value值，为了当超过capacity时，使用双向链表中查找到的key来删除哈希表中的节点
+
+get:
+    if mp.count(key) != 0 return node->val;
+    else return -1
+put:
+    if mp.count(key) != 0{//节点已存在，修改对应的值，并将其移至链表首位
+        mp[key]->val = value;//修改值
+
+        mp[key]->pre->next = mp[key]->next;//将node从双向链表取出
+        mp[key]->next->pre = mp[key]->pre
+
+        mp[key]->next = head->next;//将node插入双向链表首位
+        head->next->pre = mp[key];
+        mp[key]->pre = head;
+        head->next = mp[key];
+    }else{//不存在则插入哈希表以及双向链表中，如果插入后长度超过capacity则删除链表最后的元素
+        ListNode* node = new ListNode(value);
+
+        mp[key] = node;
+
+        node->next = head->next;
+        head->next->pre = node;
+        node->pre = head;
+        head->next = node;
+    }
+ */
+struct DLinkNode
+{
+   int key, value;
+   DLinkNode *pre, *next;
+   DLinkNode():key(0), value(0),pre(nullptr), next(nullptr){}
+   DLinkNode(int key, int value):key(key), value(value), pre(nullptr), next(nullptr){}
+//    DLinkNode(int key, int value):key(key), value(value), pre(nullptr), next(nullptr){}
+};
