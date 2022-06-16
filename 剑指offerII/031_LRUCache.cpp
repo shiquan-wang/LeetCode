@@ -153,11 +153,77 @@ put:
         head->next = node;
     }
  */
-struct DLinkNode
-{
-   int key, value;
-   DLinkNode *pre, *next;
-   DLinkNode():key(0), value(0),pre(nullptr), next(nullptr){}
-   DLinkNode(int key, int value):key(key), value(value), pre(nullptr), next(nullptr){}
+// struct DLinkNode
+// {
+//    int key, value;
+//    DLinkNode *pre, *next;
+//    DLinkNode():key(0), value(0),pre(nullptr), next(nullptr){}
 //    DLinkNode(int key, int value):key(key), value(value), pre(nullptr), next(nullptr){}
+// //    DLinkNode(int key, int value):key(key), value(value), pre(nullptr), next(nullptr){}
+// };
+class LRUCache2{
+private:
+    unordered_map<int, DlinkNode*> mp;
+    DlinkNode* head;
+    DlinkNode* tail;
+    int capacity;//容量
+    int size;
+
+public:
+    LRUCache2(int capacity) : capacity(capacity), size(0){
+        head = new DlinkNode();
+        tail = new DlinkNode();
+        head->next = tail;
+        tail->prev = head;
+    };
+    ~LRUCache2(){};
+
+    int get(int key){
+        if(mp.count(key) != 0){//key存在,返回值，
+            //将其移至双向链表首部(将节点移至链表首位，删除原本的节点)
+            DlinkNode *temp = mp[key];
+            move_to_head(temp);
+            return temp->value;
+            
+        }else{//不存在，返回-1
+            return -1;
+        }
+    }
+    void put(int key, int value){
+        if(mp.count(key) == 0){//key 不存在，直接插入
+            DlinkNode *node = new DlinkNode(key, value);
+            add_to_head(node);
+            mp[key] = node;
+            size++;
+            if(size > capacity){//超出容量，删除尾结点前的节点，要记得删除mp中对应的元素
+                DlinkNode *tail_prev = tail->prev;
+                delete_node(tail->prev);
+                mp.erase(tail_prev->key);
+                delete tail_prev;
+                --size;
+            }
+        }else{
+            DlinkNode *temp = mp[key];
+            temp->value = value;
+            move_to_head(temp);
+        }
+    }
+
+    void add_to_head(DlinkNode *node){
+        node->next = head->next;
+        head->next->prev = node;
+
+        head->next = node;
+        node->prev = head;
+    }
+
+    void delete_node(DlinkNode *node){
+        node->next->prev = node->prev;
+        node->prev->next = node->next;
+    }
+
+    void move_to_head(DlinkNode *node){
+        delete_node(node);
+        add_to_head(node);
+    }
 };
