@@ -1,34 +1,9 @@
 import math
-from platform import node
-from time import clock_getres
-from turtle import forward
-
 from torch import Tensor, dropout, softmax
 import numpy as np
 import torch
 import torch.functional as F
 import torch.nn as nn
-
-class SelfAttention(nn.Module):
-    def __init__(self, d_model, dim_k, dim_v, n_heads) -> None:
-        super(SelfAttention, self).__init__()
-        self.dim_v = dim_v
-        self.dim_k = dim_k
-        self.n_heads = n_heads
-
-        self.q = nn.Linear(d_model, dim_k)
-        self.k = nn.Linear(d_model, dim_k)
-        self.v = nn.Linear(d_model, dim_v)
-
-        self.o = nn.Linear(dim_v, d_model)
-        self.norm_fact = 1 / math.sqrt(d_model)
-
-    def forward(self, x, y, requires_mask=False):
-        assert self.dim_k % self.n_heads == 0 and self.dim_v % self.n_heads == 0
-        #size of x [batch_size * seq_len * d_model]
-        Q = self.q(x)#self_attention [batch_size, seq_len, dim_k]
-        Q = Q.reshape(-1, x.shape[0], x.shape[1], self.dim_k // self.n_heads)#multi head, [n_heads, batch_size, seq_len, dim_k]
-
 
 class MultiHeadAttention(nn.Module):
     def __init__(self, heads, d_model, dropout = 0.1):
