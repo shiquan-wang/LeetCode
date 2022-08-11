@@ -85,4 +85,33 @@ public:
         }
         return res;
     }
+
+    int trap(vector<int>& height){
+        stack<int> st;//单调栈用来存储下标
+        st.push(0);
+        int sum = 0;
+        for(int i = 1; i < height.size(); ++i){
+            if(height[i] < height[st.top()]){
+                st.push(i);
+            }else if(height[i] == height[st.top()]){
+                st.pop();
+                st.push(i);
+            }else{
+                while (!st.empty() && height[i] > height[st.top()])
+                {
+                    /* code */
+                    int mid = st.top();
+                    st.pop();
+                    if(!st.empty()){
+                        int h = min(height[i], height[st.top()]) - height[mid];
+                        int w = i - st.top() - 1;
+                        sum += h*w;
+                    }
+                }
+                
+            }
+            st.push(i);
+        }
+        return sum;
+    }
 };
