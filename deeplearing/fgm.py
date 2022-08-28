@@ -7,6 +7,7 @@
   5.根据(3)的梯度对参数进行更新
 
 """
+from pickletools import optimize
 import torch
 class FGM():
     """ 快速梯度对抗训练
@@ -30,3 +31,15 @@ class FGM():
                 assert name in self.backup
                 param.data = self.backup[name]
         self.backup = {}
+
+
+fgm = FGM()#
+for batch_input, batch_label in data:
+    loss = model(batch_input, batch_label):
+    loss.backward()
+    fgm.attack()#
+    loss_adv = model(batch_input, batch_label):#
+    loss_adv.backward()#
+    fgm.restore()#
+    optimizer.step()
+    model.zero_grad()

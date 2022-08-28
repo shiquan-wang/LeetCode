@@ -29,6 +29,4 @@ public:
         quick_sort(nums, j+1, right);
         return nums;
     }
-
-    
 };
