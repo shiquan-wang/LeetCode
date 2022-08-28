@@ -1,8 +1,8 @@
 import math
 import pandas
-import numpy as np
+import numpy as npdef kmeans(k):
 
-def kmeans(k):
+
     m, n = 100, 20#样本构造， 100行20列
     x = 10 * np.random.random(m, n)#训练集
 
