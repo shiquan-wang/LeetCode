@@ -31,7 +31,7 @@ private:
 public:
     vector<int> heap_sort(vector<int>& nums){
         int n = nums.size();
-        maxHeapity(nums, n);
+        maxHeapity(nums, n);//构建大根堆
         swap(nums[0], nums[n-1]);
         for(int i = n-2; i > 0; i--){
             n--;

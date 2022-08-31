@@ -38,14 +38,16 @@ class MultiHeadAttention(nn.Module):
         x, self.attn = self.attention(query, key, value, mask=mask, dropout=self.dropout)
 
         #step3, concat,
-        x = x.permute(0, 2, 1, 3).reshape(batch_size, -1, self.d_k*self.heads)#x [batch_size, n_heads=8, seq_len, d_k] -> [batch_size, seq_len, d_model=512=8*64]
+        x = x.permute(0, 2, 1, 3).reshape(batch_size, -1, self.d_k*self.heads)
+        #x [batch_size, n_heads=8, seq_len, d_k] -> [batch_size, seq_len, d_model=512=8*64]
         return self.o(x)
 
     def attention(self, query:Tensor, key:Tensor, value:Tensor, mask=None, dropout=None):
         d_k = query.shape[-1]
         scores = torch.matmul(query, key.permute(0, 1, 3, 2)) / math.sqrt(d_k) #attention 得分， 
         """ 
-        query [batch_size, nheads=8, seq_len, d_k=64]  key.permute[batch_size, nheads=8, , d_k=64, seq_len] 点积后scores维度-> [batch_size, n_heads=8, seq_len, seq_len]
+        query [batch_size, nheads=8, seq_len, d_k=64]  key.permute[batch_size, nheads=8, , d_k=64, seq_len] 
+        点积后scores维度-> [batch_size, n_heads=8, seq_len, seq_len]
         """
 
         if mask is not None:
