@@ -1,9 +1,23 @@
 # 回溯算法
-##
+## 模板
+```c++
+void backtracking(参数) {
+    if (终止条件) {
+        存放结果;
+        return;
+    }
+
+    for (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) {
+        处理节点;
+        backtracking(路径，选择列表); // 递归
+        回溯，撤销处理结果
+    }
+}
+```
 ### 组合问题
 * 77 组合
 * 216 combination sum ||| 组合总和 （选择k个集合中数字使得sum等于target
-* 17 letter combinations of phone number
+* 17 letter combinations of phone number 电话号码的字母组合
 * 39 combination sum 可以无限次的选择集合中的数字
 * 40 combination sum || 集合中每个数字只能使用一次,但是集合中数字有重复
 ### 分割问题
