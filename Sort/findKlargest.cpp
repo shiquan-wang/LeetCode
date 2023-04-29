@@ -65,11 +65,50 @@ public:
     }
 };
 
-int main(){
-    Solution1 s1;
-    vector<int> nums = {4, 6, 8, 5, 9};
-    vector<int> nums1 = s1.sortArray(nums);
-    for(int item : nums1){
-        cout<<item<<" ";
+class Solution2{
+public:
+    int findKthLargest(vector<int>& nums, int k){
+        quicksort_findK(nums, k, 0, nums.size() - 1);
+        return nums[nums.size()-k-1];
     }
+
+    void quicksort_findK(vector<int>& nums, int k, int left, int right){
+        if(left > right) return;
+
+        int partition = nums[left];
+        int l = left, r = right;
+        while (l < r)
+        {
+            /* code */
+            while (l < r && nums[l] < partition)
+            {
+                ++l;
+            }
+            while (l < r && nums[r] > partition )
+            {
+                --r;
+            }
+            if(l < r){
+                swap(nums[l], nums[r]);
+            }
+        }
+        if(l == k-1){
+            return ;
+        }else if(l < k-1){
+            quicksort_findK(nums, k, l+1, right);
+        }else{
+            quicksort_findK(nums, k, 0, l-1);
+        }
+    }
+};
+
+int main(){
+    Solution2 s1;
+    vector<int> nums = {4, 6, 8, 5, 9};
+    // vector<int> nums1 = s1.sortArray(nums);
+    int k = 2;
+    cout<<s1.findKlargest(nums, k);
+    // for(int item : nums1){
+    //     cout<<item<<" ";
+    // }
 }
